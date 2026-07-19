@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap');
 
-
 *{
 
 margin:0;
@@ -9,11 +8,18 @@ box-sizing:border-box;
 
 }
 
+html{
+
+scroll-behavior:smooth;
+
+}
 
 body{
 
-height:100vh;
-overflow:hidden;
+min-height:100vh;
+
+overflow-x:hidden;
+overflow-y:auto;
 
 background:
 
@@ -27,33 +33,333 @@ color:white;
 
 font-family:'Rajdhani',sans-serif;
 
+position:relative;
+
 }
+/*==================================================
+HEADER
+==================================================*/
 
-
-
-/* RUIDO CINEMATICO */
-
-.noise{
+header{
 
 position:absolute;
 
-inset:0;
+top:35px;
 
-opacity:.08;
+left:60px;
 
-background-image:
+right:60px;
 
-url("https://grainy-gradients.vercel.app/noise.svg");
+display:flex;
 
-z-index:5;
+justify-content:space-between;
 
-pointer-events:none;
+align-items:center;
+
+z-index:10;
+
+flex-wrap:wrap;
+
+gap:20px;
 
 }
 
 
 
-/* GRID FUTURISTA */
+/*==================================================
+LOGO
+==================================================*/
+
+.logo{
+
+font-size:clamp(26px,4vw,40px);
+
+font-weight:700;
+
+letter-spacing:10px;
+
+line-height:1;
+
+}
+
+.logo span{
+
+display:block;
+
+margin-top:8px;
+
+font-size:clamp(12px,2vw,20px);
+
+letter-spacing:6px;
+
+color:#00ffff;
+
+}
+
+
+
+/*==================================================
+STATUS
+==================================================*/
+
+.status{
+
+display:flex;
+
+align-items:center;
+
+border:1px solid rgba(0,255,255,.30);
+
+padding:12px 24px;
+
+border-radius:40px;
+
+background:rgba(0,255,255,.05);
+
+backdrop-filter:blur(10px);
+
+letter-spacing:3px;
+
+font-size:14px;
+
+}
+
+.dot{
+
+display:inline-block;
+
+width:8px;
+
+height:8px;
+
+background:#00ff99;
+
+border-radius:50%;
+
+margin-right:12px;
+
+box-shadow:0 0 15px #00ff99;
+
+}
+
+
+
+/*==================================================
+MAIN
+==================================================*/
+
+main{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+z-index:3;
+
+padding:120px 20px 80px;
+
+}
+
+
+
+/*==================================================
+HERO
+==================================================*/
+
+.hero{
+
+text-align:center;
+
+width:min(900px,100%);
+
+animation:appear 1.8s ease;
+
+}
+
+
+
+/*==================================================
+SMALL TEXT
+==================================================*/
+
+.small{
+
+letter-spacing:8px;
+
+font-size:14px;
+
+color:#00ffff;
+
+margin-bottom:30px;
+
+text-transform:uppercase;
+
+}
+
+
+
+/*==================================================
+TITLE
+==================================================*/
+
+h1{
+
+font-size:clamp(42px,7vw,75px);
+
+line-height:.95;
+
+font-weight:700;
+
+letter-spacing:10px;
+
+background:
+
+linear-gradient(
+90deg,
+rgb(35,113,129),
+#00ffff
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+
+0 0 45px rgba(0,255,255,.35);
+
+}
+
+
+
+/*==================================================
+DESCRIPTION
+==================================================*/
+
+.description{
+
+margin:40px auto;
+
+max-width:650px;
+
+font-size:clamp(16px,2vw,22px);
+
+font-weight:300;
+
+color:#b8c7d9;
+
+letter-spacing:2px;
+
+line-height:1.7;
+
+}
+
+
+
+/*==================================================
+PANELS
+==================================================*/
+
+.panel{
+
+display:flex;
+
+justify-content:center;
+
+align-items:stretch;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+margin-top:35px;
+
+}
+
+.panel div{
+
+width:170px;
+
+padding:22px;
+
+border:1px solid rgba(0,255,255,.25);
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(15px);
+
+font-size:14px;
+
+letter-spacing:3px;
+
+border-radius:14px;
+
+transition:.35s;
+
+}
+
+.panel div:hover{
+
+transform:translateY(-8px);
+
+border-color:#00ffff;
+
+box-shadow:0 0 25px rgba(0,255,255,.25);
+
+}
+
+.panel strong{
+
+display:block;
+
+margin-top:10px;
+
+font-size:20px;
+
+color:#00ffff;
+
+}
+/*==================================================
+SCAN LINE
+==================================================*/
+
+.scan{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:2px;
+
+background:#00ffff;
+
+box-shadow:
+
+0 0 30px cyan,
+
+0 0 60px rgba(0,255,255,.35);
+
+animation:scan 5s linear infinite;
+
+z-index:4;
+
+}
+
+
+
+/*==================================================
+GRID FUTURISTA
+==================================================*/
 
 .grid{
 
@@ -74,12 +380,11 @@ rgba(0,255,255,.08) 1px,
 transparent 1px
 );
 
-background-size:
-
-80px 80px;
+background-size:80px 80px;
 
 transform:
-perspective(600px)
+
+perspective(700px)
 rotateX(65deg);
 
 top:45%;
@@ -88,280 +393,17 @@ height:80%;
 
 opacity:.35;
 
-transition:.2s;
+transition:.35s;
+
+pointer-events:none;
 
 }
 
 
 
-
-header{
-
-position:absolute;
-
-top:40px;
-
-left:70px;
-
-right:70px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:10;
-
-}
-
-
-
-
-.logo{
-
-font-size:40px;
-
-font-weight:700;
-
-letter-spacing:12px;
-
-}
-
-
-.logo span{
-
-font-size:20px;
-
-display:block;
-
-letter-spacing:8px;
-
-color:#00ffff;
-
-}
-
-
-
-
-.status{
-
-border:1px solid rgba(0,255,255,.3);
-
-padding:12px 25px;
-
-border-radius:30px;
-
-background:
-rgba(0,255,255,.05);
-
-backdrop-filter:blur(10px);
-
-letter-spacing:3px;
-
-}
-
-
-
-
-.dot{
-
-display:inline-block;
-
-width:8px;
-
-height:8px;
-
-background:#00ff99;
-
-border-radius:50%;
-
-margin-right:15px;
-
-box-shadow:
-
-0 0 15px #00ff99;
-
-}
-
-
-
-
-main{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-position:relative;
-
-z-index:3;
-
-}
-
-
-
-
-.hero{
-
-text-align:center;
-
-max-width:900px;
-
-}
-
-
-
-
-.small{
-
-letter-spacing:8px;
-
-font-size:14px;
-
-color:#00ffff;
-
-margin-bottom:35px;
-
-}
-
-
-
-h1{
-
-font-size:75px;
-
-line-height:.9;
-
-font-weight:700;
-
-letter-spacing:15px;
-
-background:
-
-linear-gradient(
-90deg,
-rgb(35,113,129),
-#00ffff
-);
-
--webkit-background-clip:text;
-
-color:transparent;
-
-text-shadow:
-
-0 0 50px rgba(0,255,255,.3);
-
-animation:
-
-appear 2s ease;
-
-}
-
-
-
-
-.description{
-
-margin:45px auto;
-
-max-width:600px;
-
-font-size:22px;
-
-font-weight:300;
-
-color:#b8c7d9;
-
-letter-spacing:2px;
-
-}
-
-
-
-
-.panel{
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-}
-
-
-
-
-.panel div{
-
-width:170px;
-
-padding:20px;
-
-border:
-
-1px solid rgba(0,255,255,.25);
-
-background:
-
-rgba(255,255,255,.04);
-
-backdrop-filter:
-
-blur(15px);
-
-font-size:14px;
-
-letter-spacing:3px;
-
-}
-.panel strong{
-
-display:block;
-
-margin-top:10px;
-
-color:#00ffff;
-
-font-size:20px;
-
-}
-
-
-
-
-.scan{
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:2px;
-
-background:#00ffff;
-
-box-shadow:
-
-0 0 30px cyan;
-
-animation:
-
-scan 5s infinite linear;
-
-}
-
-
-
+/*==================================================
+FOOTER
+==================================================*/
 
 footer{
 
@@ -369,37 +411,51 @@ position:absolute;
 
 bottom:35px;
 
-left:70px;
+left:60px;
 
-right:70px;
+right:60px;
 
 display:flex;
 
 justify-content:space-between;
 
+align-items:center;
+
 font-size:13px;
 
-letter-spacing:5px;
+letter-spacing:4px;
 
 color:#738399;
 
+z-index:20;
+
+flex-wrap:wrap;
+
+gap:15px;
+
 }
 
 
 
-
+/*==================================================
+ANIMACIONES
+==================================================*/
 
 @keyframes scan{
 
-from{
+0%{
 
-top:0;
+top:-5%;
+
+opacity:1;
 
 }
 
-to{
+100%{
 
-top:100%;
+top:105%;
+
+opacity:.8;
 
 }
 
@@ -409,23 +465,141 @@ top:100%;
 
 @keyframes appear{
 
-from{
+0%{
 
 opacity:0;
 
 transform:
-translateY(40px);
+
+translateY(50px);
 
 }
 
-to{
+100%{
 
 opacity:1;
 
 transform:
+
 translateY(0);
 
 }
+
+}
+
+
+
+/*==================================================
+BRILLO SUAVE DEL TITULO
+==================================================*/
+
+@keyframes glow{
+
+0%{
+
+text-shadow:
+
+0 0 15px rgba(0,255,255,.15);
+
+}
+
+50%{
+
+text-shadow:
+
+0 0 35px rgba(0,255,255,.45),
+
+0 0 70px rgba(0,255,255,.20);
+
+}
+
+100%{
+
+text-shadow:
+
+0 0 15px rgba(0,255,255,.15);
+
+}
+
+}
+
+
+
+h1{
+
+animation:
+
+appear 1.5s ease,
+
+glow 4s ease-in-out infinite;
+
+}
+
+
+
+/*==================================================
+HOVER GENERAL
+==================================================*/
+
+a{
+
+color:inherit;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+a:hover{
+
+color:#00ffff;
+
+}
+
+
+
+/*==================================================
+SELECCION DE TEXTO
+==================================================*/
+
+::selection{
+
+background:#00ffff;
+
+color:#001018;
+
+}
+
+
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#05070f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#00bcd4;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#00ffff;
 
 }
 /*==================================================
@@ -434,9 +608,9 @@ REPRODUCTOR FUTURISTA PARWA
 
 #musicPlayer{
 
-position:absolute;
+position:fixed;
 
-top:10px;
+top:20px;
 
 left:50%;
 
@@ -448,54 +622,59 @@ align-items:center;
 
 gap:18px;
 
-padding:14px 24px;
+padding:12px 22px;
 
-background:rgba(255,255,255,.05);
+background:rgba(8,18,35,.70);
 
-backdrop-filter:blur(15px);
+backdrop-filter:blur(18px);
 
-border:1px solid rgba(0,255,255,.15);
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(0,255,255,.18);
 
 border-radius:60px;
 
 box-shadow:
 
-0 0 25px rgba(0,255,255,.08),
+0 10px 35px rgba(0,0,0,.45),
 
-0 15px 40px rgba(0,0,0,.35);
+0 0 30px rgba(0,255,255,.08);
 
-z-index:1000;
+z-index:9999;
 
-transition:.35s;
+transition:.35s ease;
 
 }
 
-
 #musicPlayer:hover{
+
+transform:
+
+translateX(-50%)
+
+translateY(-3px);
 
 border-color:rgba(0,255,255,.45);
 
 box-shadow:
 
-0 0 35px rgba(0,255,255,.20),
+0 18px 40px rgba(0,0,0,.50),
 
-0 20px 45px rgba(0,0,0,.45);
+0 0 35px rgba(0,255,255,.25);
 
 }
 
 
 
+/*==============================
+BOTON
+==============================*/
+
 #musicButton{
 
-width:62px;
+width:60px;
 
-height:62px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
+height:60px;
 
 border:none;
 
@@ -503,31 +682,39 @@ border-radius:50%;
 
 cursor:pointer;
 
-font-size:28px;
+display:flex;
 
-font-family:'Rajdhani',sans-serif;
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
 
 font-weight:700;
+
+font-family:'Rajdhani',sans-serif;
 
 color:white;
 
 background:
 
 linear-gradient(
+
 135deg,
-#00d4ff,
+
+#00e1ff,
+
 #008cff
+
 );
 
 box-shadow:
 
-0 0 25px rgba(0,212,255,.35);
+0 0 25px rgba(0,225,255,.45);
 
 transition:.35s;
 
 }
-
-
 
 #musicButton:hover{
 
@@ -535,19 +722,29 @@ transform:scale(1.08);
 
 box-shadow:
 
-0 0 40px rgba(0,212,255,.6);
+0 0 45px rgba(0,225,255,.75);
 
 }
 
+#musicButton:active{
 
+transform:scale(.96);
+
+}
 
 #musicButton.playing{
 
-animation:musicPulse 2s infinite;
+animation:
+
+musicPulse 2s infinite;
 
 }
 
 
+
+/*==============================
+INFO
+==============================*/
 
 .playerInfo{
 
@@ -559,37 +756,111 @@ justify-content:center;
 
 }
 
-
-
 .trackTitle{
 
-font-size:16px;
+font-size:15px;
 
 font-weight:700;
 
 letter-spacing:4px;
 
-color:#ffffff;
-
-}
-
-
-
-.trackStatus{
-
-margin-top:4px;
-
-font-size:11px;
-
-letter-spacing:3px;
-
-color:#8ecfff;
+color:white;
 
 text-transform:uppercase;
 
 }
 
+.trackStatus{
 
+margin-top:5px;
+
+font-size:11px;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#8edfff;
+
+}
+
+
+
+/*==============================
+BARRA ANIMADA
+==============================*/
+
+.playerVisualizer{
+
+display:flex;
+
+align-items:flex-end;
+
+gap:3px;
+
+height:24px;
+
+margin-left:8px;
+
+}
+
+.playerVisualizer span{
+
+width:4px;
+
+border-radius:5px;
+
+background:#00ffff;
+
+animation:equalizer 1s infinite ease-in-out;
+
+}
+
+.playerVisualizer span:nth-child(1){
+
+height:8px;
+
+animation-delay:.0s;
+
+}
+
+.playerVisualizer span:nth-child(2){
+
+height:18px;
+
+animation-delay:.2s;
+
+}
+
+.playerVisualizer span:nth-child(3){
+
+height:12px;
+
+animation-delay:.4s;
+
+}
+
+.playerVisualizer span:nth-child(4){
+
+height:20px;
+
+animation-delay:.6s;
+
+}
+
+.playerVisualizer span:nth-child(5){
+
+height:10px;
+
+animation-delay:.8s;
+
+}
+
+
+
+/*==============================
+ANIMACIONES
+==============================*/
 
 @keyframes musicPulse{
 
@@ -597,7 +868,7 @@ text-transform:uppercase;
 
 box-shadow:
 
-0 0 0 0 rgba(0,212,255,.45);
+0 0 0 0 rgba(0,225,255,.45);
 
 }
 
@@ -605,7 +876,7 @@ box-shadow:
 
 box-shadow:
 
-0 0 0 18px rgba(0,212,255,0);
+0 0 0 18px rgba(0,225,255,0);
 
 }
 
@@ -613,7 +884,480 @@ box-shadow:
 
 box-shadow:
 
-0 0 0 0 rgba(0,212,255,0);
+0 0 0 0 rgba(0,225,255,0);
+
+}
+
+}
+
+
+
+@keyframes equalizer{
+
+0%{
+
+transform:scaleY(.35);
+
+opacity:.6;
+
+}
+
+50%{
+
+transform:scaleY(1);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scaleY(.35);
+
+opacity:.6;
+
+}
+
+}
+/*==================================================
+RESPONSIVE PARWA SOFTWARE
+==================================================*/
+
+@media screen and (max-width:1024px){
+
+header{
+
+left:35px;
+right:35px;
+
+}
+
+footer{
+
+left:35px;
+right:35px;
+
+}
+
+h1{
+
+letter-spacing:8px;
+
+}
+
+.description{
+
+width:90%;
+
+}
+
+}
+
+
+
+@media screen and (max-width:768px){
+
+body{
+
+overflow-x:hidden;
+overflow-y:auto;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+position:relative;
+
+top:25px;
+
+left:0;
+right:0;
+
+padding:0 20px;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+gap:18px;
+
+}
+
+
+
+/* LOGO */
+
+.logo{
+
+font-size:30px;
+
+letter-spacing:6px;
+
+text-align:center;
+
+}
+
+.logo span{
+
+font-size:15px;
+
+letter-spacing:4px;
+
+}
+
+
+
+/* STATUS */
+
+.status{
+
+font-size:12px;
+
+padding:10px 18px;
+
+letter-spacing:2px;
+
+}
+
+
+
+/* MAIN */
+
+main{
+
+padding-top:120px;
+
+padding-left:20px;
+
+padding-right:20px;
+
+padding-bottom:70px;
+
+height:auto;
+
+min-height:100vh;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+width:100%;
+
+}
+
+
+
+/* TITULO */
+
+h1{
+
+font-size:42px;
+
+line-height:1.1;
+
+letter-spacing:4px;
+
+word-break:break-word;
+
+}
+
+
+
+/* SUBTITULO */
+
+.small{
+
+font-size:12px;
+
+letter-spacing:3px;
+
+}
+
+
+
+/* DESCRIPCION */
+
+.description{
+
+font-size:16px;
+
+line-height:1.8;
+
+letter-spacing:1px;
+
+margin:25px auto;
+
+width:100%;
+
+}
+
+
+
+/* TARJETAS */
+
+.panel{
+
+flex-direction:column;
+
+align-items:center;
+
+width:100%;
+
+}
+
+.panel div{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+
+
+/* GRID */
+
+.grid{
+
+background-size:45px 45px;
+
+opacity:.22;
+
+top:55%;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+position:relative;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+margin-top:60px;
+
+padding:30px 20px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+text-align:center;
+
+font-size:11px;
+
+letter-spacing:2px;
+
+}
+
+
+
+/* REPRODUCTOR */
+
+#musicPlayer{
+
+position:fixed;
+
+top:auto;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+max-width:360px;
+
+padding:10px 16px;
+
+gap:12px;
+
+border-radius:18px;
+
+}
+
+#musicPlayer:hover{
+
+transform:translateX(-50%);
+
+}
+
+#musicButton{
+
+width:52px;
+
+height:52px;
+
+font-size:20px;
+
+}
+
+.trackTitle{
+
+font-size:13px;
+
+letter-spacing:2px;
+
+}
+
+.trackStatus{
+
+font-size:10px;
+
+letter-spacing:2px;
+
+}
+
+.playerVisualizer{
+
+display:none;
+
+}
+
+}
+
+
+
+/*=========================================
+MOVILES PEQUEÑOS
+=========================================*/
+
+@media screen and (max-width:480px){
+
+.logo{
+
+font-size:24px;
+
+letter-spacing:4px;
+
+}
+
+.logo span{
+
+font-size:12px;
+
+}
+
+h1{
+
+font-size:34px;
+
+letter-spacing:2px;
+
+}
+
+.description{
+
+font-size:15px;
+
+}
+
+.panel div{
+
+padding:18px;
+
+}
+
+#musicPlayer{
+
+width:95%;
+
+padding:10px 12px;
+
+}
+
+#musicButton{
+
+width:48px;
+
+height:48px;
+
+font-size:18px;
+
+}
+
+.trackTitle{
+
+font-size:12px;
+
+}
+
+.trackStatus{
+
+font-size:9px;
+
+}
+
+footer{
+
+font-size:10px;
+
+letter-spacing:1px;
+
+}
+
+}
+
+
+
+/*=========================================
+PANTALLAS MUY GRANDES
+=========================================*/
+
+@media screen and (min-width:1600px){
+
+.hero{
+
+max-width:1200px;
+
+}
+
+h1{
+
+font-size:95px;
+
+}
+
+.description{
+
+font-size:24px;
+
+max-width:800px;
+
+}
+
+.panel div{
+
+width:220px;
+
+font-size:16px;
 
 }
 
