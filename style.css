@@ -1362,29 +1362,3 @@ font-size:16px;
 }
 
 }
-/* FIX FINAL REPRODUCTOR MOVIL Y PC */
-
-#musicPlayer{
-    position: fixed !important;
-    top: 20px !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translateX(-50%) !important;
-    z-index: 999999 !important;
-}
-
-
-@media (max-width:768px){
-
-#musicPlayer{
-    top:auto !important;
-    bottom:20px !important;
-    left:50% !important;
-    right:auto !important;
-    transform:translateX(-50%) !important;
-    width:90% !important;
-    max-width:360px !important;
-}
-
-}
