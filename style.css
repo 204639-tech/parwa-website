@@ -608,7 +608,7 @@ REPRODUCTOR FUTURISTA PARWA
 
 #musicPlayer{
 
-position:fixed;
+position:relative;
 
 top:20px;
 
