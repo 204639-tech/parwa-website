@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,150 +9,393 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 
 <body>
 
 <div class="noise"></div>
 
-<div class="grid"></div>
+<div class="rain"></div>
+
 
 <header>
 
-    <div class="logo">
+<div class="logo">
+PARWA
+<span>SOFTWARE</span>
+</div>
 
-        PARWA
 
-        <span>SOFTWARE</span>
+<div class="system-status">
 
-    </div>
+<span class="dot"></span>
 
-    <div class="status">
+SISTEMA EN LÍNEA
 
-        <span class="dot"></span>
+</div>
 
-        SISTEMA EN LÍNEA
 
-    </div>
+<!-- REPRODUCTOR -->
 
-</header>
+<section class="player">
 
-<main>
+<div class="music-icon">
+🎵
+</div>
 
-    <!--=====================================
-    REPRODUCTOR FUTURISTA
-    ======================================-->
 
-    <div id="musicPlayer">
+<div class="music-info">
 
-        <button id="musicButton">
+<h3 id="song-title">
+PARWA SYSTEM
+</h3>
 
-            ▶
+<p id="song-description">
+Sonido del futuro activado
+</p>
 
-        </button>
+</div>
 
-        <div class="playerInfo">
 
-            <div class="trackTitle">
+<audio id="audio">
 
-                Reproducir Música
-
-            </div>
-
-            <div class="trackStatus">
-
-                Sistema de Audio
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <section class="hero">
-
-        <p class="small">
-
-            EL FUTURO ESTÁ CONECTADO
-
-        </p>
-
-        <h1>
-
-            NUESTRO SITIO WEB <br>
-
-            ESTÁ EN CONSTRUCCIÓN
-
-        </h1>
-
-        <p class="description">
-
-            Una nueva era de tecnología,
-            inteligencia artificial y conexión humana.
-
-            La señal ha sido establecida.
-
-        </p>
-
-        <div class="panel">
-
-            <div>
-
-                ESTADO
-
-                <strong>EN LÍNEA</strong>
-
-            </div>
-
-            <div>
-
-                RED
-
-                <strong>ESTABLE</strong>
-
-            </div>
-
-            <div>
-
-                SEÑAL
-
-                <strong>ALTA</strong>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-<div class="scan"></div>
-
-<footer>
-
-    <div>
-
-        © 2026 PARWA SOFTWARE
-
-    </div>
-
-    <div>
-
-        CUSCO // PERÚ
-
-    </div>
-
-</footer>
-
-<audio id="bgMusic" loop>
-
-    <source src="music/fondo.mp3" type="audio/mpeg">
-
-    Tu navegador no soporta audio.
+<source src="music/parwa.mp3" type="audio/mpeg">
 
 </audio>
 
-<script src="script.js"></script>
+
+<button id="play">
+
+▶
+
+</button>
+
+
+</section>
+
+
+</header>
+
+
+
+<main>
+
+
+<section class="hero">
+
+
+<h1>
+
+CREAMOS SOFTWARE
+
+<br>
+
+<span>
+PARA EL FUTURO
+</span>
+
+</h1>
+
+
+<p>
+
+Desarrollamos soluciones de inteligencia artificial,
+aplicaciones móviles, plataformas web y sistemas
+digitales para instituciones y empresas.
+
+</p>
+
+
+<button class="main-button">
+
+CONOCER PROYECTOS
+
+</button>
+
+
+</section>
+
+
+
+
+<section class="status-panel">
+
+
+<div class="card">
+
+<h3>
+ESTADO
+</h3>
+
+<strong>
+🟢 ONLINE
+</strong>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+RED
+</h3>
+
+<strong>
+⚡ CONECTADA
+</strong>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+IA
+</h3>
+
+<strong>
+🤖 ACTIVA
+</strong>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="services">
+
+
+<h2>
+SERVICIOS
+</h2>
+
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<div>
+📱
+</div>
+
+<h3>
+APPS
+</h3>
+
+<p>
+Aplicaciones móviles modernas.
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div>
+🤖
+</div>
+
+<h3>
+IA
+</h3>
+
+<p>
+Automatización inteligente.
+</p>
+
+</div>
+
+
+
+
+<div class="service">
+
+<div>
+🌐
+</div>
+
+<h3>
+WEB
+</h3>
+
+<p>
+Plataformas digitales.
+</p>
+
+</div>
+
+
+
+
+<div class="service">
+
+<div>
+🎓
+</div>
+
+<h3>
+UNIVERSIDADES
+</h3>
+
+<p>
+Soluciones académicas.
+</p>
+
+</div>
+
+
+
+
+<div class="service">
+
+<div>
+📡
+</div>
+
+<h3>
+GPS
+</h3>
+
+<p>
+Seguimiento inteligente.
+</p>
+
+</div>
+
+
+
+
+<div class="service">
+
+<div>
+☁️
+</div>
+
+<h3>
+CLOUD
+</h3>
+
+<p>
+Infraestructura segura.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<section class="about">
+
+
+<h2>
+PARWA SOFTWARE
+</h2>
+
+
+<p>
+
+Construimos tecnología peruana para transformar
+ideas en soluciones digitales reales.
+
+</p>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 PARWA SOFTWARE
+
+</p>
+
+
+<p>
+
+INNOVACIÓN • IA • SOFTWARE • FUTURO
+
+</p>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+const audio = document.getElementById("audio");
+
+const button = document.getElementById("play");
+
+
+let playing=false;
+
+
+
+button.onclick=function(){
+
+
+if(playing){
+
+audio.pause();
+
+button.innerHTML="▶";
+
+playing=false;
+
+
+}
+
+else{
+
+
+audio.play();
+
+button.innerHTML="⏸";
+
+playing=true;
+
+
+}
+
+
+};
+
+
+
+</script>
+
 
 </body>
 

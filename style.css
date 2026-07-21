@@ -1,399 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap');
+/* ================================
+   PARWA SOFTWARE - CYBERPUNK UI
+   ================================ */
+
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
-
 }
 
-html{
-
-scroll-behavior:smooth;
-
-}
 
 body{
+
+font-family:'Rajdhani',sans-serif;
+
+background:#05070d;
+
+color:#ffffff;
 
 min-height:100vh;
 
 overflow-x:hidden;
-overflow-y:auto;
-
-background:
-
-radial-gradient(
-circle at top,
-#14213d,
-#02030a 60%
-);
-
-color:white;
-
-font-family:'Rajdhani',sans-serif;
-
-position:relative;
-
-}
-/*==================================================
-HEADER
-==================================================*/
-
-header{
-
-position:absolute;
-
-top:35px;
-
-left:60px;
-
-right:60px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-z-index:10;
-
-flex-wrap:wrap;
-
-gap:20px;
 
 }
 
 
 
-/*==================================================
-LOGO
-==================================================*/
+/* ================================
+   EFECTOS DE FONDO
+   ================================ */
 
-.logo{
 
-font-size:clamp(26px,4vw,40px);
+.noise{
 
-font-weight:700;
+position:fixed;
 
-letter-spacing:10px;
+inset:0;
 
-line-height:1;
+pointer-events:none;
 
-}
+background-image:
+url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
 
-.logo span{
+opacity:.15;
 
-display:block;
-
-margin-top:8px;
-
-font-size:clamp(12px,2vw,20px);
-
-letter-spacing:6px;
-
-color:#00ffff;
+z-index:5;
 
 }
 
 
 
-/*==================================================
-STATUS
-==================================================*/
+.rain{
 
-.status{
+position:fixed;
 
-display:flex;
-
-align-items:center;
-
-border:1px solid rgba(0,255,255,.30);
-
-padding:12px 24px;
-
-border-radius:40px;
-
-background:rgba(0,255,255,.05);
-
-backdrop-filter:blur(10px);
-
-letter-spacing:3px;
-
-font-size:14px;
-
-}
-
-.dot{
-
-display:inline-block;
-
-width:8px;
-
-height:8px;
-
-background:#00ff99;
-
-border-radius:50%;
-
-margin-right:12px;
-
-box-shadow:0 0 15px #00ff99;
-
-}
-
-
-
-/*==================================================
-MAIN
-==================================================*/
-
-main{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
-z-index:3;
-
-padding:120px 20px 80px;
-
-}
-
-
-
-/*==================================================
-HERO
-==================================================*/
-
-.hero{
-
-text-align:center;
-
-width:min(900px,100%);
-
-animation:appear 1.8s ease;
-
-}
-
-
-
-/*==================================================
-SMALL TEXT
-==================================================*/
-
-.small{
-
-letter-spacing:8px;
-
-font-size:14px;
-
-color:#00ffff;
-
-margin-bottom:30px;
-
-text-transform:uppercase;
-
-}
-
-
-
-/*==================================================
-TITLE
-==================================================*/
-
-h1{
-
-font-size:clamp(42px,7vw,75px);
-
-line-height:.95;
-
-font-weight:700;
-
-letter-spacing:10px;
-
-background:
-
-linear-gradient(
-90deg,
-rgb(35,113,129),
-#00ffff
-);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-text-shadow:
-
-0 0 45px rgba(0,255,255,.35);
-
-}
-
-
-
-/*==================================================
-DESCRIPTION
-==================================================*/
-
-.description{
-
-margin:40px auto;
-
-max-width:650px;
-
-font-size:clamp(16px,2vw,22px);
-
-font-weight:300;
-
-color:#b8c7d9;
-
-letter-spacing:2px;
-
-line-height:1.7;
-
-}
-
-
-
-/*==================================================
-PANELS
-==================================================*/
-
-.panel{
-
-display:flex;
-
-justify-content:center;
-
-align-items:stretch;
-
-flex-wrap:wrap;
-
-gap:25px;
-
-margin-top:35px;
-
-}
-
-.panel div{
-
-width:170px;
-
-padding:22px;
-
-border:1px solid rgba(0,255,255,.25);
-
-background:rgba(255,255,255,.04);
-
-backdrop-filter:blur(15px);
-
-font-size:14px;
-
-letter-spacing:3px;
-
-border-radius:14px;
-
-transition:.35s;
-
-}
-
-.panel div:hover{
-
-transform:translateY(-8px);
-
-border-color:#00ffff;
-
-box-shadow:0 0 25px rgba(0,255,255,.25);
-
-}
-
-.panel strong{
-
-display:block;
-
-margin-top:10px;
-
-font-size:20px;
-
-color:#00ffff;
-
-}
-/*==================================================
-SCAN LINE
-==================================================*/
-
-.scan{
-
-position:absolute;
-
-top:0;
+top:-100%;
 
 left:0;
 
 width:100%;
 
-height:2px;
+height:200%;
 
-background:#00ffff;
-
-box-shadow:
-
-0 0 30px cyan,
-
-0 0 60px rgba(0,255,255,.35);
-
-animation:scan 5s linear infinite;
-
-z-index:4;
-
-}
-
-
-
-/*==================================================
-GRID FUTURISTA
-==================================================*/
-
-.grid{
-
-position:absolute;
-
-inset:-50px;
 
 background:
 
 linear-gradient(
-rgba(0,255,255,.08) 1px,
-transparent 1px
-),
-
-linear-gradient(
-90deg,
-rgba(0,255,255,.08) 1px,
-transparent 1px
+120deg,
+transparent 40%,
+rgba(0,255,255,.12),
+transparent 60%
 );
 
-background-size:80px 80px;
 
-transform:
-
-perspective(700px)
-rotateX(65deg);
-
-top:45%;
-
-height:80%;
-
-opacity:.35;
-
-transition:.35s;
+animation:rainMove 8s linear infinite;
 
 pointer-events:none;
 
@@ -401,982 +81,808 @@ pointer-events:none;
 
 
 
-/*==================================================
-FOOTER
-==================================================*/
+@keyframes rainMove{
 
-footer{
 
-position:absolute;
+from{
 
-bottom:35px;
+transform:translateY(0);
 
-left:60px;
+}
 
-right:60px;
 
-display:flex;
+to{
 
-justify-content:space-between;
+transform:translateY(50%);
 
-align-items:center;
+}
 
-font-size:13px;
-
-letter-spacing:4px;
-
-color:#738399;
-
-z-index:20;
-
-flex-wrap:wrap;
-
-gap:15px;
 
 }
 
 
 
-/*==================================================
-ANIMACIONES
-==================================================*/
 
-@keyframes scan{
 
-0%{
 
-top:-5%;
+/* ================================
+   HEADER
+   ================================ */
 
-opacity:1;
-
-}
-
-100%{
-
-top:105%;
-
-opacity:.8;
-
-}
-
-}
-
-
-
-@keyframes appear{
-
-0%{
-
-opacity:0;
-
-transform:
-
-translateY(50px);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-
-}
-
-
-
-/*==================================================
-BRILLO SUAVE DEL TITULO
-==================================================*/
-
-@keyframes glow{
-
-0%{
-
-text-shadow:
-
-0 0 15px rgba(0,255,255,.15);
-
-}
-
-50%{
-
-text-shadow:
-
-0 0 35px rgba(0,255,255,.45),
-
-0 0 70px rgba(0,255,255,.20);
-
-}
-
-100%{
-
-text-shadow:
-
-0 0 15px rgba(0,255,255,.15);
-
-}
-
-}
-
-
-
-h1{
-
-animation:
-
-appear 1.5s ease,
-
-glow 4s ease-in-out infinite;
-
-}
-
-
-
-/*==================================================
-HOVER GENERAL
-==================================================*/
-
-a{
-
-color:inherit;
-
-text-decoration:none;
-
-transition:.3s;
-
-}
-
-a:hover{
-
-color:#00ffff;
-
-}
-
-
-
-/*==================================================
-SELECCION DE TEXTO
-==================================================*/
-
-::selection{
-
-background:#00ffff;
-
-color:#001018;
-
-}
-
-
-
-/*==================================================
-SCROLLBAR
-==================================================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#05070f;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#00bcd4;
-
-border-radius:10px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#00ffff;
-
-}
-/*==================================================
-REPRODUCTOR FUTURISTA PARWA
-==================================================*/
-
-#musicPlayer{
-
-position:relative;
-
-top:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-padding:12px 22px;
-
-background:rgba(8,18,35,.70);
-
-backdrop-filter:blur(18px);
-
--webkit-backdrop-filter:blur(18px);
-
-border:1px solid rgba(0,255,255,.18);
-
-border-radius:60px;
-
-box-shadow:
-
-0 10px 35px rgba(0,0,0,.45),
-
-0 0 30px rgba(0,255,255,.08);
-
-z-index:9999;
-
-transition:.35s ease;
-
-}
-
-#musicPlayer:hover{
-
-transform:
-
-translateX(-50%)
-
-translateY(-3px);
-
-border-color:rgba(0,255,255,.45);
-
-box-shadow:
-
-0 18px 40px rgba(0,0,0,.50),
-
-0 0 35px rgba(0,255,255,.25);
-
-}
-
-
-
-/*==============================
-BOTON
-==============================*/
-
-#musicButton{
-
-width:60px;
-
-height:60px;
-
-border:none;
-
-border-radius:50%;
-
-cursor:pointer;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:26px;
-
-font-weight:700;
-
-font-family:'Rajdhani',sans-serif;
-
-color:white;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#00e1ff,
-
-#008cff
-
-);
-
-box-shadow:
-
-0 0 25px rgba(0,225,255,.45);
-
-transition:.35s;
-
-}
-
-#musicButton:hover{
-
-transform:scale(1.08);
-
-box-shadow:
-
-0 0 45px rgba(0,225,255,.75);
-
-}
-
-#musicButton:active{
-
-transform:scale(.96);
-
-}
-
-#musicButton.playing{
-
-animation:
-
-musicPulse 2s infinite;
-
-}
-
-
-
-/*==============================
-INFO
-==============================*/
-
-.playerInfo{
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-}
-
-.trackTitle{
-
-font-size:15px;
-
-font-weight:700;
-
-letter-spacing:4px;
-
-color:white;
-
-text-transform:uppercase;
-
-}
-
-.trackStatus{
-
-margin-top:5px;
-
-font-size:11px;
-
-letter-spacing:3px;
-
-text-transform:uppercase;
-
-color:#8edfff;
-
-}
-
-
-
-/*==============================
-BARRA ANIMADA
-==============================*/
-
-.playerVisualizer{
-
-display:flex;
-
-align-items:flex-end;
-
-gap:3px;
-
-height:24px;
-
-margin-left:8px;
-
-}
-
-.playerVisualizer span{
-
-width:4px;
-
-border-radius:5px;
-
-background:#00ffff;
-
-animation:equalizer 1s infinite ease-in-out;
-
-}
-
-.playerVisualizer span:nth-child(1){
-
-height:8px;
-
-animation-delay:.0s;
-
-}
-
-.playerVisualizer span:nth-child(2){
-
-height:18px;
-
-animation-delay:.2s;
-
-}
-
-.playerVisualizer span:nth-child(3){
-
-height:12px;
-
-animation-delay:.4s;
-
-}
-
-.playerVisualizer span:nth-child(4){
-
-height:20px;
-
-animation-delay:.6s;
-
-}
-
-.playerVisualizer span:nth-child(5){
-
-height:10px;
-
-animation-delay:.8s;
-
-}
-
-
-
-/*==============================
-ANIMACIONES
-==============================*/
-
-@keyframes musicPulse{
-
-0%{
-
-box-shadow:
-
-0 0 0 0 rgba(0,225,255,.45);
-
-}
-
-70%{
-
-box-shadow:
-
-0 0 0 18px rgba(0,225,255,0);
-
-}
-
-100%{
-
-box-shadow:
-
-0 0 0 0 rgba(0,225,255,0);
-
-}
-
-}
-
-
-
-@keyframes equalizer{
-
-0%{
-
-transform:scaleY(.35);
-
-opacity:.6;
-
-}
-
-50%{
-
-transform:scaleY(1);
-
-opacity:1;
-
-}
-
-100%{
-
-transform:scaleY(.35);
-
-opacity:.6;
-
-}
-
-}
-/*==================================================
-RESPONSIVE PARWA SOFTWARE
-==================================================*/
-
-@media screen and (max-width:1024px){
 
 header{
-
-left:35px;
-right:35px;
-
-}
-
-footer{
-
-left:35px;
-right:35px;
-
-}
-
-h1{
-
-letter-spacing:8px;
-
-}
-
-.description{
 
 width:90%;
 
-}
+max-width:1200px;
 
-}
+margin:auto;
 
-
-
-@media screen and (max-width:768px){
-
-body{
-
-overflow-x:hidden;
-overflow-y:auto;
-
-}
-
-
-
-/* HEADER */
-
-header{
-
-position:relative;
-
-top:25px;
-
-left:0;
-right:0;
-
-padding:0 20px;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
+padding-top:40px;
 
 text-align:center;
 
-gap:18px;
-
 }
 
 
 
-/* LOGO */
 
 .logo{
 
-font-size:30px;
+font-size:4rem;
 
-letter-spacing:6px;
+font-weight:700;
 
-text-align:center;
+letter-spacing:8px;
+
+color:#00ffff;
+
+text-shadow:
+
+0 0 10px #00ffff,
+
+0 0 30px #00ffff;
+
 
 }
+
+
 
 .logo span{
 
-font-size:15px;
+display:block;
 
-letter-spacing:4px;
+font-size:1.4rem;
 
-}
+letter-spacing:12px;
 
-
-
-/* STATUS */
-
-.status{
-
-font-size:12px;
-
-padding:10px 18px;
-
-letter-spacing:2px;
+color:#ffffff;
 
 }
 
 
 
-/* MAIN */
 
-main{
-
-padding:120px 20px 30px;
-
-height:auto;
-
-min-height:auto;
-
-}
+.system-status{
 
 
+margin:30px auto;
 
-/* HERO */
-
-.hero{
-
-width:100%;
-
-}
-
-
-
-/* TITULO */
-
-h1{
-
-font-size:42px;
-
-line-height:1.1;
-
-letter-spacing:4px;
-
-word-break:break-word;
-
-}
-
-
-
-/* SUBTITULO */
-
-.small{
-
-font-size:12px;
-
-letter-spacing:3px;
-
-}
-
-
-
-/* DESCRIPCION */
-
-.description{
-
-font-size:16px;
-
-line-height:1.8;
-
-letter-spacing:1px;
-
-margin:25px auto;
-
-width:100%;
-
-}
-
-
-
-/* TARJETAS */
-
-.panel{
-
-flex-direction:column;
+display:inline-flex;
 
 align-items:center;
 
-width:100%;
-
-}
-
-.panel div{
-
-width:100%;
-
-max-width:320px;
-
-}
-
-
-
-/* GRID */
-
-.grid{
-
-background-size:45px 45px;
-
-opacity:.22;
-
-top:55%;
-
-}
-
-
-
-/* FOOTER */
-
-footer{
-
-position:relative;
-
-left:0;
-
-right:0;
-
-bottom:0;
-
-margin-top:25px;
-
-padding:30px 20px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
 gap:12px;
 
-text-align:center;
 
-font-size:11px;
+padding:12px 30px;
 
-letter-spacing:2px;
+
+border:1px solid #00ff99;
+
+
+border-radius:30px;
+
+
+background:rgba(0,255,150,.08);
+
+
+box-shadow:
+
+0 0 20px rgba(0,255,150,.5);
+
+
+font-size:1.2rem;
+
 
 }
 
 
 
-/* REPRODUCTOR */
+.dot{
 
-#mus#musicPlayer{
 
-position:relative;
+width:12px;
 
-margin:35px auto;
+height:12px;
 
-left:auto;
+background:#00ff99;
 
-top:auto;
+border-radius:50%;
 
-bottom:auto;
+box-shadow:
 
-transform:none;
+0 0 15px #00ff99;
 
-width:92%;
 
-max-width:360px;
+animation:pulse 1.5s infinite;
 
-padding:10px 16px;
-
-gap:12px;
-
-border-radius:18px;
-
-}icPlayer{
-
-position:fixed;
-
-top:auto;
-
-bottom:35px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:92%;
-
-max-width:360px;
-
-padding:10px 16px;
-
-gap:12px;
-
-border-radius:18px;
-
-}
-
-#musicPlayer:hover{
-
-transform:translateX(-50%);
-
-}
-
-#musicButton{
-
-width:52px;
-
-height:52px;
-
-font-size:20px;
-
-}
-
-.trackTitle{
-
-font-size:13px;
-
-letter-spacing:2px;
-
-}
-
-.trackStatus{
-
-font-size:10px;
-
-letter-spacing:2px;
-
-}
-
-.playerVisualizer{
-
-display:none;
-
-}
 
 }
 
 
 
-/*=========================================
-MOVILES PEQUEÑOS
-=========================================*/
+@keyframes pulse{
 
-@media screen and (max-width:480px){
 
-.logo{
+50%{
 
-font-size:24px;
-
-letter-spacing:4px;
+opacity:.3;
 
 }
 
-.logo span{
-
-font-size:12px;
 
 }
 
-h1{
 
-font-size:34px;
 
-letter-spacing:2px;
 
-}
 
-.description{
 
-font-size:15px;
+/* ================================
+   PLAYER
+   ================================ */
 
-}
 
-.panel div{
+.player{
 
-padding:18px;
-
-}
-
-#musicPlayer{
 
 width:95%;
 
-padding:10px 12px;
+max-width:650px;
+
+margin:25px auto;
+
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+
+padding:20px;
+
+
+background:rgba(255,255,255,.05);
+
+
+border:1px solid rgba(0,255,255,.4);
+
+
+border-radius:15px;
+
+
+backdrop-filter:blur(10px);
+
+
+box-shadow:
+
+0 0 30px rgba(0,255,255,.15);
+
 
 }
 
-#musicButton{
 
-width:48px;
 
-height:48px;
+.music-icon{
 
-font-size:18px;
+font-size:35px;
 
 }
 
-.trackTitle{
 
-font-size:12px;
+.music-info{
 
-}
+flex:1;
 
-.trackStatus{
-
-font-size:9px;
-
-}
-
-footer{
-
-font-size:10px;
-
-letter-spacing:1px;
-
-}
+text-align:left;
 
 }
 
 
 
-/*=========================================
-PANTALLAS MUY GRANDES
-=========================================*/
+.music-info h3{
 
-@media screen and (min-width:1600px){
+color:#00ffff;
+
+font-size:1.4rem;
+
+}
+
+
+
+.music-info p{
+
+color:#aaa;
+
+}
+
+
+
+.player button{
+
+
+width:50px;
+
+height:50px;
+
+
+border-radius:50%;
+
+
+border:none;
+
+
+background:#00ffff;
+
+
+font-size:20px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 20px #00ffff;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   HERO
+   ================================ */
+
 
 .hero{
 
-max-width:1200px;
+
+width:90%;
+
+max-width:900px;
+
+margin:100px auto;
+
+
+text-align:center;
+
 
 }
 
-h1{
 
-font-size:95px;
+
+.hero h1{
+
+
+font-size:5rem;
+
+
+line-height:1;
+
+
+letter-spacing:5px;
+
 
 }
 
-.description{
 
-font-size:24px;
+.hero h1 span{
+
+
+color:#00ffff;
+
+
+text-shadow:
+
+0 0 20px #00ffff;
+
+
+}
+
+
+
+
+.hero p{
+
+
+margin:35px auto;
+
+
+max-width:700px;
+
+
+font-size:1.4rem;
+
+
+color:#cccccc;
+
+
+line-height:1.6;
+
+
+}
+
+
+
+
+.main-button{
+
+
+padding:18px 45px;
+
+
+border-radius:40px;
+
+
+border:1px solid #00ffff;
+
+
+background:transparent;
+
+
+color:#ffffff;
+
+
+font-size:1.2rem;
+
+
+cursor:pointer;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.main-button:hover{
+
+
+background:#00ffff;
+
+
+color:#000;
+
+
+box-shadow:
+
+0 0 40px #00ffff;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   STATUS PANEL
+   ================================ */
+
+
+.status-panel{
+
+
+width:90%;
+
+max-width:900px;
+
+margin:auto;
+
+
+display:grid;
+
+
+grid-template-columns:repeat(3,1fr);
+
+
+gap:20px;
+
+
+}
+
+
+
+.card{
+
+
+padding:30px;
+
+
+text-align:center;
+
+
+background:rgba(255,255,255,.04);
+
+
+border:1px solid rgba(0,255,255,.3);
+
+
+border-radius:15px;
+
+
+}
+
+
+
+.card h3{
+
+
+color:#aaa;
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+.card strong{
+
+
+font-size:1.5rem;
+
+
+}
+
+
+
+
+
+
+
+/* ================================
+   SERVICES
+   ================================ */
+
+
+.services{
+
+
+width:90%;
+
+max-width:1100px;
+
+
+margin:120px auto;
+
+
+text-align:center;
+
+
+}
+
+
+
+.services h2,
+
+
+.about h2{
+
+
+font-size:3rem;
+
+
+color:#00ffff;
+
+
+margin-bottom:50px;
+
+
+}
+
+
+
+.service-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(3,1fr);
+
+
+gap:25px;
+
+
+}
+
+
+
+
+.service{
+
+
+padding:35px;
+
+
+background:rgba(255,255,255,.04);
+
+
+border:1px solid rgba(0,255,255,.25);
+
+
+border-radius:20px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.service:hover{
+
+
+transform:translateY(-10px);
+
+
+border-color:#00ffff;
+
+
+box-shadow:
+
+0 0 30px rgba(0,255,255,.3);
+
+
+}
+
+
+
+.service div{
+
+
+font-size:40px;
+
+
+}
+
+
+
+.service h3{
+
+
+margin:15px;
+
+
+color:#00ffff;
+
+
+}
+
+
+
+.service p{
+
+
+color:#aaa;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   ABOUT
+   ================================ */
+
+
+.about{
+
+
+width:90%;
 
 max-width:800px;
 
+
+margin:100px auto;
+
+
+text-align:center;
+
+
 }
 
-.panel div{
 
-width:220px;
 
-font-size:16px;
+.about p{
+
+
+font-size:1.3rem;
+
+color:#ccc;
+
 
 }
+
+
+
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+
+footer{
+
+
+padding:40px;
+
+text-align:center;
+
+
+border-top:1px solid rgba(255,255,255,.1);
+
+
+color:#777;
+
+
+letter-spacing:3px;
+
+
+}
+
+
+
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+
+@media(max-width:900px){
+
+
+.logo{
+
+font-size:2.8rem;
+
+}
+
+
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+
+
+.status-panel{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.service-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.player{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+
+.music-info{
+
+text-align:center;
+
+}
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+header{
+
+padding-top:25px;
+
+}
+
+
+
+.logo{
+
+font-size:2rem;
+
+letter-spacing:4px;
+
+}
+
+
+
+.logo span{
+
+font-size:.9rem;
+
+letter-spacing:5px;
+
+}
+
+
+
+.hero{
+
+margin:60px auto;
+
+}
+
+
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+
+
+.hero p{
+
+font-size:1.1rem;
+
+}
+
+
+
+.services h2,
+
+.about h2{
+
+font-size:2rem;
+
+}
+
 
 }
