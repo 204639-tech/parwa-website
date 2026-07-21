@@ -1173,7 +1173,31 @@ letter-spacing:2px;
 
 /* REPRODUCTOR */
 
-#musicPlayer{
+#mus#musicPlayer{
+
+position:relative;
+
+margin:35px auto;
+
+left:auto;
+
+top:auto;
+
+bottom:auto;
+
+transform:none;
+
+width:92%;
+
+max-width:360px;
+
+padding:10px 16px;
+
+gap:12px;
+
+border-radius:18px;
+
+}icPlayer{
 
 position:fixed;
 
